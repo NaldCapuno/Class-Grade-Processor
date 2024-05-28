@@ -7,13 +7,18 @@ def read_csv(file_name):
         for row in reader:
             if row:
                 name, grade = row[0], row[1]
+                try:
+                    grade = float(grade)
+                except ValueError:
+                    print(f"Warning: Grade for {name} is not a valid number. Skipping entry.")
+                    continue
             students[name] = grade
     return students
 
 def calculate_grades(students):
     grades = []
     for grade in students.values():
-        grades.append(float(grade))
+        grades.append(grade)
     average_grade = round((sum(grades) / len(grades)), 1)    
     highest_grade = max(grades)
     lowest_grade = min(grades)
@@ -36,15 +41,15 @@ def main():
 
     average_grade, highest_grade, lowest_grade, highest_grade_names, lowest_grade_names = calculate_grades(students)
     
-    print(f"Number of student/s in the class: {len(students)}\n")
+    print(f"Number of student(s) in the class: {len(students)}\n")
     print(f"Average grade of the class: {average_grade}")
     print(f"Highest class score: {highest_grade}")
     print(f"Lowest class score: {lowest_grade}\n")
-    print(f"Name of students who earned the highest score:")
+    print(f"Name of student(s) who earned the highest score:")
     for i in range(1, len(highest_grade_names)+1):
         print(f"{i}. {highest_grade_names[i-1]}")
     print()
-    print(f"Name of student/s who earned the lowest score:")
+    print(f"Name of student(s) who earned the lowest score:")
     for i in range(1, len(lowest_grade_names)+1):
         print(f"{i}. {lowest_grade_names[i-1]}")
 
