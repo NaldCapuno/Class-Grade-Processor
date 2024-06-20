@@ -7,9 +7,13 @@ This Python program processes a CSV file containing class records and provides s
 - Identify the students who achieved the highest and lowest grades.
 
 ## How to use
-1. **Create a folder:** Create a new folder on your computer.
-2. **Add the Python file:** Put the Python script into the folder and rename it to grade_processor.py.
-3. **Add the CSV file:** Place your CSV file containing class records into the folder and rename it to classRecord.csv.
+**Prerequisites**
+
+Make sure you have Python installed on your system. You can download it from [python.org](www.python.org).
+
+1. Create a new folder on your computer.
+2. Download the Python file **grade_processor.py** and put it into the folder.
+3. Place your CSV file containing class records into the folder and rename it to classRecord.csv.
 
 The classRecord.csv should have the following format (name, grade):
 ```csv
@@ -18,7 +22,7 @@ Jane Smith,92.5
 ...
 ```
 
-4. **Run the script:** Open a terminal or command prompt, navigate to the folder where your script and CSV file are located, and run:
+4. Open a terminal or command prompt, navigate to the folder where your script and CSV file are located, and run:
 ```bash
 python grade_processor.py
 ```
